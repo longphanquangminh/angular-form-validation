@@ -1,0 +1,115 @@
+html,body{
+  margin:0;
+  padding:0;
+}
+h3 {
+    color: white; 
+    background-color: black; 
+    padding:10px;
+}
+.product {
+  width: 500px;
+  height: auto;
+  /* flex-wrap: wrap; */
+
+  /* align-items: center; */
+  /* align-self: center; */
+  /* align-content: center; */
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+.product-item{
+    /* border: 1px solid white; */
+    background-color:white;
+    text-align: center;
+    width: 444px;
+    height: 520px;
+    /* margin-bottom: 100px; */
+    padding: 10px;
+    border: 5px solid gray;
+    border-radius: 10px;
+    /* cursor: pointer; */
+    margin:50px;
+    
+    /* margin-bottom:20px; */
+    /* position: relative; hmm */
+}
+.product-item:hover{
+    background-color: #ffffff;
+    /* transform-style: preserve-3d;  */
+    transform: scale(1.02);
+    transition: all ease 0.3s;
+    box-shadow:5px 5px 5px 5px gray;
+}
+ .product-info{
+    padding: 10px 0px;
+}
+.product-name{
+    color: black;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    overflow: hidden;
+    width:100%;
+    text-align: left;
+
+    /* để hiển thị trên 1 dòng, dài thì để dấu 3 chấm ... */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.product-info .product-price{
+    padding: 2px 0px;
+    font-weight: bold;
+    text-align: left; 
+    color:red
+}
+
+.product-top img{
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width:200px;height:300px;
+    object-fit:contain;
+}
+
+.buyNowButton{
+  background-color: orange;
+  color:white;
+  width:90%;
+  height:40px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  border:none;
+  
+  /* position: absolute; bottom: 10px;right:5%; hmm */
+}
+.buyNowButton:hover{
+  transform: scale(1.1);
+    transition: all ease 0.3s;
+}
+.promotionButton{
+    background-color: orange;
+    color:white;
+    width:25%;
+    height:40px;
+    /* font-size: 20px; */
+    border-radius: 5px;
+    font-weight: bold;
+    border:none;
+    position:relative;
+    right:30%;
+    cursor:auto;
+}
+.loveButton{
+  cursor:pointer;
+  width:30px;
+  position:relative;
+  right:-30%;
+}
+.loveButton:hover{
+  transform: scale(1.5);
+    transition: all ease 0.3s;
+}

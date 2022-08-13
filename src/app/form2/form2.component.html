@@ -1,0 +1,72 @@
+<h2 class="text-center text-primary" style="background-color: black; color: white !important; padding:10px">CRUD App Example</h2>
+<div style="display: flex; flex-wrap: nowrap;">
+    <div class="container-fluid" style="flex:50%">
+        <form [formGroup]="regForm">
+            <h4>Update Product Info</h4>
+            <div class="mb-3">
+                <label for="productname">Productname</label>
+                <input placeholder="Enter product name" type="text" id="productname" name="productname" class="form-control" 
+                formControlName="productname" 
+                [class.is-invalid]="productname.invalid && productname.touched">
+                <div *ngIf="productname.invalid && productname.touched">
+                    <small class="text-danger" *ngIf="productname.errors?.['required']">
+                        productname không được để trống</small>
+                    <small class="text-danger" *ngIf="productname.errors?.['minlength']">
+                        productname tối thiểu 3 ký tự</small>
+                    <small class="text-danger" *ngIf="productname.errors?.['nameNotMatch']">
+                        productname không được chứa ký tự đặc biệt</small>
+                </div>
+                <!-- <small class="text-danger" *ngIf="regForm.controls['productname'].invalid 
+                && regForm.controls['productname'].touched">
+                productname không được để trống</small> -->
+            </div>
+            <div class="mb-3">
+                <label for="productprice">Price</label>
+                <input placeholder="0" type="productprice" id="productprice" name="productprice" class="form-control" 
+                formControlName="productprice" [class.is-invalid]="regForm.controls['productprice'].invalid 
+                && regForm.controls['productprice'].errors.pattern && regForm.controls['productprice'].touched">
+                <small class="text-danger" *ngIf="regForm.controls['productprice'].invalid
+                && regForm.controls['productprice'].errors.pattern && regForm.controls['productprice'].touched">
+                productprice không hợp lệ</small>
+            </div>
+            <!-- <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" 
+                formControlName="pass">
+            </div>
+            <div class="mb-3">
+                <label for="confirmPass">Confirm Password</label>
+                <input type="password" id="confirmPass" class="form-control" 
+                formControlName="confirmPass" [class.is-invalid]="regForm.errors?.['misMatch']">
+                <small class="text-danger" *ngIf="regForm.errors?.['misMatch']">Mật khẩu không đúng</small>
+            </div> -->
+            <div class="mb-3 text-center">
+                <button class="btn btn-primary" (click)="getValueFromInput()">Submit</button>
+                <button class="btn btn-secondary ms-2" (click)="setDefaultValue()">Reset</button>
+            </div>
+        </form>
+    </div>
+    <div style="flex:50%">
+        <h2 style="text-align: center;">Product List</h2>
+        <div ng-app="AngularApp">
+            <div ng-controller="ProductController">
+                <table class="table table table-striped">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr *ngFor="let p of products">
+                        <td>1</td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.price}}</td>
+                        <td><button>Edit</button></td>
+                        <td><button>Del</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

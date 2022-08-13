@@ -1,0 +1,24 @@
+<h3 class="text-center">{{"Product List"|uppercase}}</h3>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="product" *ngFor="let p of products">
+    <div class="product-item">
+        <button class="promotionButton">- 25%</button>
+        <img class="loveButton" onclick="" src="http://cdn.onlinewebfonts.com/svg/img_515003.png">
+        <div class="product-top">
+            <img src="{{p.image}}">
+        </div>
+        <div class="product-info">
+            <div class="product-name">{{p.title}}</div>
+            <div class="product-price">${{p.price}}</div>
+            <div style="text-align: left;">
+                
+                <p style="text-align:left; color:grey"><img style="width: 15px; margin-bottom: 3.9px;" src="https://www.freeiconspng.com/uploads/black-star-icon-6.png">
+                    {{p.rating['rate']}}
+                    <!-- <i class="material-icons">&#xe430;</i> -->
+                    <span style="float:right;">Count: {{p.rating['count']}}</span>
+                </p>
+            </div>
+        </div>
+        <button class="buyNowButton">Buy Now</button>
+    </div>
+</div>
